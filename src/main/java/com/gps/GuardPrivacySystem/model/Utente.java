@@ -1,5 +1,7 @@
 package com.gps.GuardPrivacySystem.model;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -8,17 +10,20 @@ public class Utente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private int id;
 	private String username;
 	private String password;
 	private String email;
 	private String role;
 	
+	@OneToMany(mappedBy = "usermanagement", cascade = CascadeType.ALL)
+	private List<Feedback> feedbackList;
+	
 	//Getters e setters...
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getUsername() {
@@ -44,5 +49,13 @@ public class Utente {
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	
+	public List<Feedback> getFeedbackList() {
+		return feedbackList;
+	}
+	
+	public void setFeedbackList(List<Feedback> feedbackList) {
+		this.feedbackList = feedbackList;
 	}
 }

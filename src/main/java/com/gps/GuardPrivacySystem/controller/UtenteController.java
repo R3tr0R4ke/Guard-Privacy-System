@@ -1,7 +1,6 @@
 package com.gps.GuardPrivacySystem.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +8,7 @@ import com.gps.GuardPrivacySystem.model.Utente;
 import com.gps.GuardPrivacySystem.repository.UtenteRepository;
 
 @RestController
-@RequestMapping("/api/utenti")
+@RequestMapping("/api/users")
 public class UtenteController {
 
 	@Autowired
