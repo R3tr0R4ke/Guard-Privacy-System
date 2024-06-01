@@ -1,4 +1,4 @@
-package com.gps.GuardPrivacySystem.model;
+package com.gps.GuardPrivacySystem.model.PKBmanager;
 
 import jakarta.persistence.*;
 

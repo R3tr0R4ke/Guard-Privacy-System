@@ -1,6 +1,7 @@
-package com.gps.GuardPrivacySystem.model;
+package com.gps.GuardPrivacySystem.model.PKBmanager;
 
 import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
