@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import com.gps.GuardPrivacySystem.model.Feedback;
 
 @Repository
-public interface FeedbackRepository extends JpaRepository<Feedback, Long>{
+public interface FeedbackRepository extends JpaRepository<Feedback, Integer>{
 }

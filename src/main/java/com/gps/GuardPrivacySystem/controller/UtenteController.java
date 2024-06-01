@@ -18,21 +18,21 @@ public class UtenteController {
 	public List<Utente> getAllUtenti(){
 		return utenteRepository.findAll();
 	}
-	
+		
 	@PostMapping
 	public Utente createUtente(@RequestBody Utente utente) {
 		return utenteRepository.save(utente);
 	}
 		
 	@GetMapping("/{id}")
-	public ResponseEntity<Utente> getUserById(@PathVariable Long id) {
+	public ResponseEntity<Utente> getUserById(@PathVariable Integer id) {
 	    return utenteRepository.findById(id)
 	    		.map(user -> ResponseEntity.ok().body(user))
 	            .orElse(ResponseEntity.notFound().build());
 	}
 		
 	@PutMapping("/{id}")
-	public ResponseEntity<Utente> updateUser(@PathVariable Long id, @RequestBody Utente userDetails) {
+	public ResponseEntity<Utente> updateUser(@PathVariable Integer id, @RequestBody Utente userDetails) {
 		return utenteRepository.findById(id)
 				.map(user -> {
 	            user.setUsername(userDetails.getUsername());
@@ -44,7 +44,7 @@ public class UtenteController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> deleteUser(@PathVariable Long id) {
+	public ResponseEntity<?> deleteUser(@PathVariable Integer id) {
 		return utenteRepository.findById(id)
 	            .map(user -> {
 	            utenteRepository.delete(user);

@@ -26,14 +26,14 @@ public class StrategyController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Strategy> getStrategyById(@PathVariable Long id){
+	public ResponseEntity<Strategy> getStrategyById(@PathVariable Integer id){
 		return strategyRepository.findById(id)
 				.map(strategy -> ResponseEntity.ok().body(strategy))
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Strategy> updateStrategy(@PathVariable Long id, @RequestBody Strategy strategyDetails){
+	public ResponseEntity<Strategy> updateStrategy(@PathVariable Integer id, @RequestBody Strategy strategyDetails){
 		return strategyRepository.findById(id)
 				.map(strategy -> {
 					strategy.setName(strategyDetails.getName());
@@ -46,7 +46,7 @@ public class StrategyController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> deleteStrategy(@PathVariable Long id){
+	public ResponseEntity<?> deleteStrategy(@PathVariable Integer id){
 		return strategyRepository.findById(id)
 				.map(strategy -> {
 					strategyRepository.delete(strategy);

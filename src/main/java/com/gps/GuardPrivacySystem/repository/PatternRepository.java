@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import com.gps.GuardPrivacySystem.model.Pattern;
 
 @Repository
-public interface PatternRepository extends JpaRepository<Pattern, Long>{
+public interface PatternRepository extends JpaRepository<Pattern, Integer>{
 }

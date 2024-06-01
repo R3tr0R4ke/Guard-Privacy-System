@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.gps.GuardPrivacySystem.model.PKBSystem;
 
 @Repository
-public interface PKBSystemRepository extends JpaRepository<PKBSystem, Long>{
+public interface PKBSystemRepository extends JpaRepository<PKBSystem, Integer>{
 
 }
