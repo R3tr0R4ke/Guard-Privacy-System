@@ -1,4 +1,4 @@
-package com.gps.GuardPrivacySystem.controller;
+package com.gps.GuardPrivacySystem.controller.complianceController;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
