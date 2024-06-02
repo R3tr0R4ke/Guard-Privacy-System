@@ -1,10 +1,9 @@
 package com.gps.GuardPrivacySystem.model.NotificationManager;
 
 import com.gps.GuardPrivacySystem.model.UserManager.UserManagement;
-
 import jakarta.persistence.*;
 
-
+@Entity
 @Table(name = "notification")
 public class Notification {
 

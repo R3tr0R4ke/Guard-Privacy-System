@@ -27,7 +27,9 @@ public class Pattern {
 	@OneToMany(mappedBy = "pattern", cascade = CascadeType.ALL)
 	private List<Vulnerability> vulnerabilities;
 	
-	private List<String> mitigatedVulnerabilities;
+	//TODO:DEVE AVERE UNA RELAZIONE CON PATTERN ALTRIMENTI NON COMPILA
+	//CONSIDERARE DI USARLO ALTROVE
+	//private List<String> mitigatedVulnerabilities;
 	
 	//Getter e setters
 	public int getId() {
@@ -86,11 +88,11 @@ public class Pattern {
 		this.vulnerabilities = vulnerabilities;
 	}
 
-	public List<String> getMitigatedVulnerabilities() {
+	/*public List<String> getMitigatedVulnerabilities() {
 		return mitigatedVulnerabilities;
 	}
 
 	public void setMitigatedVulnerabilities(List<String> mitigatedVulnerabilities) {
 		this.mitigatedVulnerabilities = mitigatedVulnerabilities;
-	}
+	}*/
 }

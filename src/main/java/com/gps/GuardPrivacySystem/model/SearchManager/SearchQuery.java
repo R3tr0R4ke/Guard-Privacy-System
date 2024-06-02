@@ -14,7 +14,7 @@ public class SearchQuery {
 	private String query;
 	
 	//Relazione con Result
-	@OneToMany(mappedBy = "pattern", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "searchQuery", cascade = CascadeType.ALL)
 	private List<Result> results;
 
 	//Getters e Setters
