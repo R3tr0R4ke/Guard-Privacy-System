@@ -12,8 +12,13 @@ public class ComplianceValidation {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int compliance_id;
 	
+	//Relazione con Rule
 	@OneToMany(mappedBy = "complianceValidation", cascade = CascadeType.ALL)
 	private List<Rule> rules;
+	
+	//Relazione con CWE
+	@OneToMany(mappedBy = "complianceValidation", cascade = CascadeType.ALL)
+	private List<CWE> cwes;
 
 	//Getters e Setters
 	public int getCompliance_id() {
@@ -30,6 +35,14 @@ public class ComplianceValidation {
 
 	public void setRules(List<Rule> rules) {
 		this.rules = rules;
+	}
+	
+	public List<CWE> getCwes() {
+		return cwes;
+	}
+
+	public void setCwes(List<CWE> cwes) {
+		this.cwes = cwes;
 	}
 
 	@Override

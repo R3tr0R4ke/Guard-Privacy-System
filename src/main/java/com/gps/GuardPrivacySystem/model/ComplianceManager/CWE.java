@@ -11,6 +11,11 @@ public class CWE {
 	private int cwe_id;
 	private String description;
 	
+	//Relazione con ComplianceValidation
+	@ManyToOne
+	@JoinColumn(name = "compliance_id", nullable = false)
+	private ComplianceValidation complianceValidation;
+	
 	//Getters e setters
 	public int getCwe_id() {
 		return cwe_id;
@@ -25,6 +30,12 @@ public class CWE {
 		this.description = description;
 	}
 	
+	public ComplianceValidation getComplianceValidation() {
+		return complianceValidation;
+	}
+	public void setComplianceValidation(ComplianceValidation complianceValidation) {
+		this.complianceValidation = complianceValidation;
+	}
 	@Override
 	public String toString() {
 		return "CWE [cwe_id=" + cwe_id + ", description=" + description + ", getCwe_id()=" + getCwe_id()

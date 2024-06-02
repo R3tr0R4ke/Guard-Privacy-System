@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Strategy {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int strategy_id;
 	private String name;
 	private String Description;

@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 public class Pattern {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String description;
@@ -21,7 +21,13 @@ public class Pattern {
 	
 	//Relazione con PatternExample
 	@OneToMany(mappedBy = "pattern", cascade = CascadeType.ALL)
-	private List<PatternExample> patternExampleList;
+	private List<PatternExample> patternExamples;
+	
+	//Relazione con Vulnerability
+	@OneToMany(mappedBy = "pattern", cascade = CascadeType.ALL)
+	private List<Vulnerability> vulnerabilities;
+	
+	private List<String> mitigatedVulnerabilities;
 	
 	//Getter e setters
 	public int getId() {
@@ -48,12 +54,12 @@ public class Pattern {
 		this.description = description;
 	}
 
-	public List<PatternExample> getPatternExampleList() {
-		return patternExampleList;
+	public List<PatternExample> getPatternExamples() {
+		return patternExamples;
 	}
 
-	public void setPatternExampleList(List<PatternExample> patternExampleList) {
-		this.patternExampleList = patternExampleList;
+	public void setPatternExamples(List<PatternExample> patternExamples) {
+		this.patternExamples = patternExamples;
 	}
 
 	public PKBSystem getPkbSystem() {
@@ -62,5 +68,29 @@ public class Pattern {
 
 	public void setPkbSystem(PKBSystem pkbSystem) {
 		this.pkbsystem = pkbSystem;
+	}
+
+	public PKBSystem getPkbsystem() {
+		return pkbsystem;
+	}
+
+	public void setPkbsystem(PKBSystem pkbsystem) {
+		this.pkbsystem = pkbsystem;
+	}
+
+	public List<Vulnerability> getVulnerabilities() {
+		return vulnerabilities;
+	}
+
+	public void setVulnerabilities(List<Vulnerability> vulnerabilities) {
+		this.vulnerabilities = vulnerabilities;
+	}
+
+	public List<String> getMitigatedVulnerabilities() {
+		return mitigatedVulnerabilities;
+	}
+
+	public void setMitigatedVulnerabilities(List<String> mitigatedVulnerabilities) {
+		this.mitigatedVulnerabilities = mitigatedVulnerabilities;
 	}
 }

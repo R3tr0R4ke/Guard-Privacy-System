@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 public class PKBSystem {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int pkb_id;
 	private String name;
 	

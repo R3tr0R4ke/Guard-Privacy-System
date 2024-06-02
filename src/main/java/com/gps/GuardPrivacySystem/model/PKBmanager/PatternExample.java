@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class PatternExample {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long example_id;
 	private String description;
 	
