@@ -1,7 +1,7 @@
 package com.gps.GuardPrivacySystem.model.SearchManager;
 
 import java.util.List;
-
+//import com.gps.GuardPrivacySystem.model.PKBmanager.Vulnerability;
 import jakarta.persistence.*;
 
 @Entity
@@ -48,4 +48,16 @@ public class SearchQuery {
 				+ getQuery_id() + ", getQuery()=" + getQuery() + ", getResults()=" + getResults() + ", getClass()="
 				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
+	
+	/*public List<Result> executeQuery(){
+		
+	}*/
+	
+	/*public List<Result> executeAdvancedQuery(filters){
+		
+	}*/
+	
+	/*public List<Vulnerability> searchMitigatedVulnerabilities(pattern_id){
+		
+	}*/
 } 

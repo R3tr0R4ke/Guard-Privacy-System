@@ -33,7 +33,7 @@ public class UserManagement {
 	//Relazione con Feedback
 	@OneToMany(mappedBy = "userManagement", cascade = CascadeType.ALL)
 	private List<Feedback> feedbacks;
-
+	
 	//Getters e Setters
 	public int getUser_id() {
 		return user_id;
